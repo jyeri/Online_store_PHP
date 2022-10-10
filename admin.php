@@ -12,7 +12,7 @@
 				<input type="text" name="fieldtoprice"/>
 				<input type="submit" value="Price Update" name="newprice" />
 				<input type="hidden" name="price_sku" value="'.$value['SKU'].'" />
-				<input type="hidden" name="changed" value="'.$_POST['fieldtoprice'].'" />
+				<input type="hidden" name="changed" value="'.isset($_POST['fieldtoprice']).'" />
 				<br />
 				<br />
 				<input type="submit" name="pokemon_delete" value="DELETE" />
@@ -21,15 +21,17 @@
 			</ul>
 			</form>';
 	}
-	if ($_POST['pokemon_delete'] && $_POST['pokemon_delete'] == "DELETE"){
+	if (isset($_POST['pokemon_delete']) && isset($_POST['pokemon_delete']) == "DELETE"){
 		unset($_SESSION['pokemon'][$_POST['delete_pokemon_sku']]);
 		foreach ($_SESSION['pokemon'] as $pokemon => $value)
 			$line = $line.implode(',', $value)."\n";
+		header("location:admin.php");
 	}
-	if ($_POST['newprice'] && $_POST['newprice'] == "Price Update"){
+	if (isset($_POST['newprice']) && isset($_POST['newprice']) == "Price Update"){
 		$_SESSION['pokemon'][$_POST['price_sku']]['Price'] = $_POST['fieldtoprice'];
 		foreach ($_SESSION['pokemon'] as $pokemon => $value)
 		$line = $line.implode(',', $value)."\n";
+		header("location:admin.php");
 	}
 	if ($line)
 		file_put_contents("data/pokemon.csv", $line);
@@ -65,7 +67,7 @@
 			<form action="" method="POST">
 				<input type="submit" name="logout" value="logout" />
 			</form>';
-			if ($_POST['logout'])
+			if (isset($_POST['logout']))
 			{
 				$_SESSION['login'] = "";
 				$_SESSION['passwd'] = "";
