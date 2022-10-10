@@ -1,0 +1,89 @@
+body {
+	background: #fff;
+	font-family: Monospace;
+	text-align: center;
+}
+.shop_logo{
+	margin-top: 2vw;
+	width: 20vw;
+}
+.main_title{
+	text-align: center;
+	padding-top: 3vw;
+	font-weight: bold;
+	font-size: 1vw;
+}
+.menu{
+	border-bottom:0.2vw solid #000;
+	padding: 0;
+	position: relative;
+	width: 77vw;
+	margin: 0 auto 2vw auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+ul	{
+	padding: 0;
+	list-style: none;
+}
+.item {
+	position: relative;
+	width: 15vw;
+	height: 3vw;
+	float: left;
+	background-color: #fff;
+}
+.item a {
+	display: block;
+	color: #000;
+	font-size: 1.5vw;
+	line-height: 4vw;
+	text-align: center;
+}
+.child {
+	visibility: hidden;
+}
+.item:hover .child {
+	visibility: visible;
+}
+.filter{
+	padding: 0;
+	margin: auto;
+	position: relative;
+	width: 54vw;
+	text-align: right;
+}
+.product_list{
+	padding: 0;
+	position: relative;
+	width: 55.5vw;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+.product{
+	position: relative;
+	width: 15vw;
+	text-align: center;
+	margin: 0.5vw;
+	border: 0.2vw solid #F0F0F0;
+	padding: 1vw
+}
+.product p {
+	font-size: 1vw;
+	margin: 0.5vw;
+}
+.product_image{
+	width: 10vw;
+}
+.add_button{
+	color: #fff;
+	background: #000;
+	width: 10vw;
+	height: 2vw;
+	border: 0;
+	font-family: Monospace;
+	font-size: 1vw;
+}
