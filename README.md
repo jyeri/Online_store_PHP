@@ -1,5 +1,5 @@
 # Online_store_in_php
-Build an online store website in A WEEKEND. Written in PHP, HTML &amp; CSS.
+Build an online store website in A WEEKEND for leaning PHP. Written in PHP, HTML &amp; CSS.
 
 ## Open the website with docker
 ```
